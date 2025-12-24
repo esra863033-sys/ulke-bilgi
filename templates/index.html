@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOD EON Ülke Bilgi Merkezi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-bolt"></i> KOD EON ÜLKE BİLGİ MERKEZİ <i class="fas fa-bolt"></i></h1>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="countryInput" placeholder="Turkey...">
+            <button onclick="getCountry()">ARA</button>
+        </div>
+
+        <div id="result" class="result-container" style="display: none;">
+            <div class="flag-container">
+                <img id="flag" src="" alt="Ülke Bayrağı">
+                <h2 id="countryName">TURKEY</h2>
+            </div>
+
+            <div class="info-grid">
+                <div class="card">
+                    <i class="fas fa-landmark"></i>
+                    <span>Başkent</span>
+                    <strong id="capital">-</strong>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <span>Nüfus</span>
+                    <strong id="population">-</strong>
+                </div>
+                <div class="card">
+                    <i class="fas fa-globe-europe"></i>
+                    <span>Kıta</span>
+                    <strong id="continent">-</strong>
+                </div>
+                <div class="card">
+                    <i class="fas fa-map"></i>
+                    <span>Bölge</span>
+                    <strong id="region">-</strong>
+                </div>
+                <div class="card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Para Birimi</span>
+                    <strong id="currency">-</strong>
+                </div>
+                <div class="card">
+                    <i class="fas fa-language"></i>
+                    <span>Diller</span>
+                    <strong id="language">-</strong>
+                </div>
+            </div>
+
+            <a id="mapLink" href="#" target="_blank" class="map-btn">
+                <i class="fas fa-map-marker-alt"></i> HARİTADA GÖR
+            </a>
+        </div>
+        
+        <div id="error" class="error-msg" style="display: none;"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
